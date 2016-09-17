@@ -6,7 +6,7 @@
 "
 
 let s:yankstack_tail = []
-let g:yankstack_size = 30
+let g:yankstack_size = 5
 let s:last_paste = { 'changedtick': -1, 'key': '', 'mode': 'n', 'count': 1, 'register': '' }
 
 if !exists('g:yankstack_yank_keys')
