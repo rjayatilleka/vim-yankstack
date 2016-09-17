@@ -103,7 +103,15 @@ function! s:after_paste()
 endfunction
 
 function! s:last_change_was_paste()
-  return b:changedtick == s:last_paste.changedtick
+  if b:changedtick == s:last_paste.changedtick
+    return 1
+  elseif b:changedtick - 1 == s:last_paste.changedtick
+    if b:changedtick == b:autosavetick
+      return 1
+    endif
+  endif
+
+  return 0
 endfunction
 
 function! s:default_register()
